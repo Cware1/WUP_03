@@ -66,7 +66,15 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
-## Numerical Summarys 
+## Numerical Summarys
+
+``` {r include = TRUE, echo = FALSE}
+favstats(alcohol~Seat,data=davisdata)
+```
+
+The median and mean of the back seats is substantially higher in the back seat class, far beyond what we would expect to see from random variations, the sample has n > 30 as well so wo would not expect large variations like what is scene here.
+
+The $\sigma$ is also substantially larger in the back seats as well, more than double the other two categories.
 
 ## Inferential Tests
 
