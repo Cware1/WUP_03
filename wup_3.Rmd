@@ -38,6 +38,20 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 Looking at the data using glimpse() we can see that Alcohol is a continuous numerical and seat is a regular categorical. This problem is a numerical categorical comparison so we will use the Num~Cat helper file in CandP. We will also use the mytricks to factor the categorical data using dyplr. We will show our graphical results using ggplot2, numerical with favstats, and run inferential tests with an anova because we have more than two categories and then a TukeyHSD to find where the differences are in our data.
 
 
+### Graphical Descriptive Results
+
+``` {r include = TRUE, echo = FALSE}
+ggplot(data = davisdata, aes(x = Seat, y = alcohol) ) +
+geom_boxplot (notch=FALSE,outlier.colour = "red",outlier.size = 2, fill = "darkgray") +
+stat_boxplot (geom ='errorbar') +
+labs (x = "Seat", y = "Alcohol Consumed", title = "Alcohol vs Seat Choice") +
+theme (plot.title = element_text(hjust = 0.5, size = 16) )
+```
+
+We see here that the back seats dispropirtionatly consume more alcohol than the front and middle. The median of the back seats is almost at the Q4 measure in the front seats. Additionally the IQR of back seats is above the median of both the front and middle seats.
+
+We can also see that the middle is slightly higher than the front with a higher median and has more outliers. If this were a more robust assessment we would likely see that front and middle are more similar.
+
 
 ## Now add in boxplot
 
